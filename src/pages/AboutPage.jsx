@@ -6,6 +6,7 @@ import jessicaPic from '../assets/images/management_photo/Jessica.jpg';
 import henryPic from '../assets/images/management_photo/Henry.jpg';
 import michellePic from '../assets/images/management_photo/Michelle.jpg';
 import keyinPic from '../assets/images/management_photo/Keyin.jpg';
+import chloePic from '../assets/images/management_photo/Chloe.jpg';
 
 const AboutPage = () => {
   const teamMembers = [
@@ -30,19 +31,24 @@ const AboutPage = () => {
       image: henryPic
     },
     {
+      name: '徐克引',
+      position: '首席运营官',
+      image: keyinPic,
+    },
+    {
       name: '范嘉非',
       position: '软件工程副总裁',
       image: frankPic,
     },
     {
+      name: '吴好好',
+      position: '产品副总裁',
+      image: chloePic,
+    },
+    {
       name: 'Michelle Guo',
       position: '信息技术总监',
       image: michellePic,
-    },
-    {
-      name: '徐克引',
-      position: '首席运营官',
-      image: keyinPic,
     },
   ];
 
