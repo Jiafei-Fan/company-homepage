@@ -27,13 +27,13 @@ const ContactPage = () => {
       link: 'mailto:yg3242@stern.nyu.edu'
     },
     {
-      label: '副总裁邮箱',
+      label: 'CTO邮箱',
       value: 'hengjinzhu@cmu.edu',
       icon: <HiMail className="w-6 h-6" />,
       link: 'mailto:hengjinzhu@cmu.edu'
     },
     {
-      label: 'CTO邮箱',
+      label: 'COO邮箱',
       value: '2023141010074@stu.scu.edu.cn',
       icon: <HiMail className="w-6 h-6" />,
       link: 'mailto:2023141010074@stu.scu.edu.cn'
