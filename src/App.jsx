@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,7 +11,19 @@ import ContactPage from './pages/ContactPage';
 import { LoginPage, NotFoundPage } from './pages/PlaceholderPages';
 import MobileMenu from './components/MobileMenu';
 
-function App() {
+// ScrollToTop component to reset scroll position on navigation
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    // Reset both horizontal and vertical scroll position when route changes
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
+  return null;
+}
+
+function AppContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
@@ -36,33 +48,40 @@ function App() {
   };
   
   return (
-    <Router>
-      <div className="min-h-screen relative bg-white">
-        <Header 
-          ref={headerRef}
-          setIsMobileMenuOpen={toggleMobileMenu}
-          isMobileMenuOpen={isMobileMenuOpen}
-        />
-        <div className="pt-16 flex flex-col min-h-screen">
-          <main className="flex-grow p-5 md:p-10 border-b">
-            <Routes>
-              <Route path="/" element={<AboutPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/resources" element={<ResourcesPage />} />
-              <Route path="/responsibility" element={<ResponsibilityPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-        <MobileMenu 
-          isOpen={isMobileMenuOpen} 
-          onClose={() => setIsMobileMenuOpen(false)}
-        />
+    <div className="min-h-screen relative bg-white">
+      <ScrollToTop />
+      <Header 
+        ref={headerRef}
+        setIsMobileMenuOpen={toggleMobileMenu}
+        isMobileMenuOpen={isMobileMenuOpen}
+      />
+      <div className="pt-16 flex flex-col min-h-screen">
+        <main className="flex-grow p-5 md:p-10 border-b">
+          <Routes>
+            <Route path="/" element={<AboutPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/responsibility" element={<ResponsibilityPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

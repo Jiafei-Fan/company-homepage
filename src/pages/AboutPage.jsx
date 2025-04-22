@@ -66,7 +66,7 @@ const AboutPage = () => {
               <span className="whitespace-nowrap">稳健在外。</span>
             </div>
             <p className="subtitle text-center">
-                UtilityMax是一家进行投资算法与研究的公司<br />
+                UtilityMax是一家进行理财算法研究的公司<br />
                 我们的使命是基于经济学模型，让技术为用户提供理性决策建议。
               </p>
           </div>
