@@ -96,10 +96,10 @@ const ResourcesPage = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="title">资源中心</h1>
-            <p className="subtitle">
+            {/* <p className="subtitle">
               探索我们的金融知识库<br />
               获取专业的见解和最新的行业动态
-            </p>
+            </p> */}
           </div>
         </div>
       </section>

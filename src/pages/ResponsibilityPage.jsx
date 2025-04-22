@@ -31,10 +31,10 @@ const ResponsibilityPage = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="title">社会责任</h1>
-            <p className="subtitle">
+            {/* <p className="subtitle">
               我们深信企业应该为社会创造积极的影响<br />
               致力于推动金融普惠、支持社区发展、促进可持续发展
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
