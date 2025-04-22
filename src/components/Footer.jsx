@@ -54,11 +54,11 @@ const Footer = () => {
   ];
   
   const socialLinks = [
-    { icon: <FaTwitter size="1.25em" />, path: 'https://twitter.com' },
-    { icon: <FaYoutube size="1.25em" />, path: 'https://youtube.com' },
-    { icon: <FaLinkedin size="1.25em" />, path: 'https://linkedin.com' },
-    { icon: <FaGithub size="1.25em" />, path: 'https://github.com' },
-    { icon: <FaInstagram size="1.25em" />, path: 'https://instagram.com' },
+    // { icon: <FaTwitter size="1.25em" />, path: 'https://twitter.com' },
+    // { icon: <FaYoutube size="1.25em" />, path: 'https://youtube.com' },
+    // { icon: <FaLinkedin size="1.25em" />, path: 'https://linkedin.com' },
+    // { icon: <FaGithub size="1.25em" />, path: 'https://github.com' },
+    // { icon: <FaInstagram size="1.25em" />, path: 'https://instagram.com' },
     { icon: <XiaohongshuIcon size="1.25em" className="transform translate-y-[-1px]" />, path: 'https://www.xiaohongshu.com/user/profile/6537211f000000000400aad5', title: '小红书' },
     { icon: <WeChatOfficialIcon />, path: '#', title: '微信公众号' },
   ];

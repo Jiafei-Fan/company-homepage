@@ -1,76 +1,83 @@
 import { useState } from 'react';
-import { HiSearch, HiDownload, HiOutlineDocumentText, HiOutlineBookOpen, HiOutlinePlay } from 'react-icons/hi';
+import { HiSearch, HiDownload, HiOutlineDocumentText, HiOutlineBookOpen, HiOutlinePlay, HiOutlineSpeakerphone, HiOutlineQuestionMarkCircle } from 'react-icons/hi';
 
 const ResourcesPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('全部');
   
-  const filters = ['全部', '指南', '报告', '视频', '工具'];
+  const filters = ['全部', '重点文章', '相关社媒', '高层采访', '常见问题'];
+  
+  // Function to get icon based on resource type
+  const getIconByType = (type) => {
+    switch (type) {
+      case '重点文章':
+      case '报告':
+        return <HiOutlineDocumentText className="w-6 h-6" />;
+      case '视频':
+        return <HiOutlinePlay className="w-6 h-6" />;
+      case '工具':
+        return <HiDownload className="w-6 h-6" />;
+      case '指南':
+        return <HiOutlineBookOpen className="w-6 h-6" />;
+      case '相关社媒':
+        return <HiOutlineSpeakerphone className="w-6 h-6" />;
+      case '高层采访':
+        return <HiOutlineSpeakerphone className="w-6 h-6" />;
+      case '常见问题':
+        return <HiOutlineQuestionMarkCircle className="w-6 h-6" />;
+      default:
+        return <HiOutlineDocumentText className="w-6 h-6" />;
+    }
+  };
   
   const resources = [
     {
       id: 1,
-      title: '个人投资入门指南',
-      type: '指南',
-      description: '为初学者提供的投资基础知识，包括投资理念、风险管理和资产配置等内容。',
-      date: '2025-02-15',
-      icon: <HiOutlineDocumentText className="w-6 h-6" />,
+      title: '特朗普vs拜登：两个政府的宏观经济政策分析及比较（1）',
+      type: '重点文章',
+      description: '对比特朗普与拜登政府的宏观经济表现和减税政策影响。',
+      date: '2024-11-20',
+      link: 'https://mp.weixin.qq.com/s/EPgRBSaZUjIAtypfn0xLnQ',
     },
     {
       id: 2,
-      title: '2025年一季度市场展望',
-      type: '报告',
-      description: '分析全球经济形势和市场走势，为投资者提供专业的市场预测和投资建议。',
-      date: '2025-03-01',
-      icon: <HiOutlineDocumentText className="w-6 h-6" />,
+      title: '及时行乐 or 延迟满足：什么是终生平滑消费？我们该如何存钱？',
+      type: '重点文章',
+      description: '用经济学模型解释终生平滑消费概念，并探讨如何合理存钱以实现一生消费稳定。',
+      date: '2024-11-23',
+      link: 'https://mp.weixin.qq.com/s/xyxPvsJ4C2tjzhTlkhf2ow',
     },
     {
       id: 3,
-      title: '如何制定有效的退休规划',
-      type: '视频',
-      description: '由我们的资深财务顾问讲解退休规划的关键要素和实用策略。',
-      date: '2025-01-20',
-      icon: <HiOutlinePlay className="w-6 h-6" />,
+      title: '如何评价中美贸易战？为什么美国经济学家反对特朗普对中国实施高关税政策？',
+      type: '重点文章',
+      description: '分析特朗普对华高关税政策为何未能改善美国贸易逆差，反而导致双输局面。',
+      date: '2024-11-28',
+      link: 'https://mp.weixin.qq.com/s/8-4euvp2gtdpvKz6XEgnfQ',
     },
     {
       id: 4,
-      title: '风险承受能力评估工具',
-      type: '工具',
-      description: '通过一系列问题评估您的风险承受能力，帮助您确定适合的投资组合。',
-      date: '2024-12-10',
-      icon: <HiDownload className="w-6 h-6" />,
+      title: '普雷斯科特和萨默斯关于真实经济周期理论的辩论',
+      type: '重点文章',
+      description: '总结Summers批评RBC理论缺乏实证支持，以及Prescott强调理论指导测量的重要回应。',
+      date: '2025-3-21',
+      link: 'https://mp.weixin.qq.com/s/Ge-_DsjhNjZxUmngnoMJJA',
     },
     {
       id: 5,
-      title: '家庭财务管理手册',
-      type: '指南',
-      description: '全面的家庭财务管理指南，包含预算规划、债务管理、储蓄策略等内容。',
-      date: '2025-02-28',
-      icon: <HiOutlineBookOpen className="w-6 h-6" />,
+      title: '如何评价特朗普的“对等关税”政策？美国经济学教授们怎么看待这一政策？它对全球经济有何影响？',
+      type: '重点文章',
+      description: '整理经济学界对特朗普“对等关税”政策的批评，并指出其或将引发全球经济衰退。',
+      date: '2025-04-10',
+      link: 'https://mp.weixin.qq.com/s/kcLzw5eXoDAnAPftoZGkUg',
     },
     {
       id: 6,
-      title: '企业现金流管理策略',
-      type: '报告',
-      description: '针对企业的现金流管理策略，帮助企业优化资金使用效率，提高财务稳健性。',
-      date: '2025-01-15',
-      icon: <HiOutlineDocumentText className="w-6 h-6" />,
-    },
-    {
-      id: 7,
-      title: '投资组合回测分析工具',
-      type: '工具',
-      description: '通过历史数据回测不同投资组合的表现，帮助投资者优化资产配置。',
-      date: '2025-02-05',
-      icon: <HiDownload className="w-6 h-6" />,
-    },
-    {
-      id: 8,
-      title: '如何应对市场波动',
-      type: '视频',
-      description: '市场波动时期的投资策略和心理准备，帮助投资者冷静应对市场变化。',
-      date: '2025-03-10',
-      icon: <HiOutlinePlay className="w-6 h-6" />,
+      title: '如何用新凯恩斯主义的理论分析关税影响？什么是三方程模型？央行该如何制定政策利率？',
+      type: '重点文章',
+      description: '用新凯恩斯主义三方程模型分析关税冲击，并探讨央行应如何制定利率应对通胀与衰退。',
+      date: '2025-04-18',
+      link: 'https://mp.weixin.qq.com/s/bOSPu6rmKv7G2_WuKekEWg',
     },
   ];
   
@@ -102,11 +109,11 @@ const ResourcesPage = () => {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Search */}
-            <div className="relative w-full md:w-auto md:min-w-[300px]">
+            <div className="relative w-full md:w-auto md:min-w-[300px] font-sans">
               <input
                 type="text"
                 placeholder="搜索资源..."
-                className="w-full py-2 pl-10 pr-4 border rounded-full focus:outline-none focus:ring-2 focus:ring-black"
+                className="w-full py-2 pl-10 pr-4 border rounded-full focus:outline-none focus:ring-1 focus:ring-black"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -114,14 +121,14 @@ const ResourcesPage = () => {
             </div>
             
             {/* Filters */}
-            <div className="flex flex-wrap justify-center space-x-2">
+            <div className="flex flex-wrap justify-center space-x-2 font-sans">
               {filters.map((filter, index) => (
                 <button
                   key={index}
                   className={`px-4 py-2 rounded-full text-sm font-medium ${
                     activeFilter === filter
                       ? 'bg-black text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                   onClick={() => setActiveFilter(filter)}
                 >
@@ -145,85 +152,31 @@ const ResourcesPage = () => {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className="inline-block p-2 bg-gray-100 rounded-full">
-                      {resource.icon}
+                      {getIconByType(resource.type)}
                     </span>
-                    <span className="text-sm text-gray-500">{resource.date}</span>
+                    <span className="text-sm text-gray-500 font-sans">{resource.date}</span>
                   </div>
-                  <h3 className="card-title">{resource.title}</h3>
+                  <h3 className="card-title"><a href={resource.link} target="_blank" rel="noopener noreferrer" className="hover:underline">{resource.title}</a></h3>
                   <div className="mb-4">
-                    <span className="inline-block px-2 py-1 bg-gray-100 text-xs font-medium rounded">
+                    <span className="inline-block px-2 py-1 bg-gray-100 text-xs text-gray-500 font-medium rounded font-sans">
                       {resource.type}
                     </span>
                   </div>
                   <p className="general-text">{resource.description}</p>
-                  <button className="text-black font-medium hover:underline">
-                    查看详情 →
-                  </button>
                 </div>
               ))}
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-lg text-gray-600">没有找到匹配的资源，请尝试其他搜索词或筛选条件。</p>
+              <p className="text-lg text-gray-500 font-sans">没有找到匹配的资源，请尝试其他搜索词或筛选条件。</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* Featured Resources */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="h2-title">热门资源</h2>
-            <p className="general-text">
-              这些是我们最受欢迎的资源，为您提供有价值的金融知识和工具
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: '财务健康自测',
-                description: '评估您的财务状况，发现潜在问题，获取改进建议。',
-                icon: '📊',
-                type: '工具'
-              },
-              {
-                title: '2025年投资展望',
-                description: '我们的专家团队对2025年全球经济和投资市场的深度分析和预测。',
-                icon: '📈',
-                type: '报告'
-              },
-              {
-                title: '财务自由之路',
-                description: '一套实用的指南，帮助您规划和实现财务自由的目标。',
-                icon: '🔑',
-                type: '指南'
-              }
-            ].map((resource, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md"
-              >
-                <div className="text-3xl mb-4">{resource.icon}</div>
-                <h3 className="card-title">{resource.title}</h3>
-                <div className="mb-4">
-                  <span className="inline-block px-2 py-1 bg-gray-100 text-xs font-medium rounded">
-                    {resource.type}
-                  </span>
-                </div>
-                <p className="general-text">{resource.description}</p>
-                <button className="text-black font-medium hover:underline">
-                  立即访问 →
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Newsletter Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto bg-gray-100 p-8 rounded-lg">
             <div className="text-center mb-8">
@@ -254,7 +207,7 @@ const ResourcesPage = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

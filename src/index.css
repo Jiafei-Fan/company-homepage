@@ -81,6 +81,10 @@ html, body {
   .general-text {
     @apply text-base mb-4 text-main-text;
   }
+
+  .highlight-text {
+    @apply text-accent-blue font-extrabold;
+  }
   
   .link-text {
     @apply text-gray-600 hover:text-black transition-colors;
@@ -120,7 +124,7 @@ html, body {
   }
   
   .card-outline {
-    @apply border border-gray-200 rounded-lg p-6;
+    @apply border border-gray-200 rounded-lg p-6 font-sans;
   }
   
   .card-title {

@@ -39,151 +39,28 @@ const ResponsibilityPage = () => {
         </div>
       </section>
 
-      {/* Our Approach Section */}
+      {/* Our Commitment Section - White Background */}
       <section className="py-16">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="h2-title">我们的方法</h2>
-              <p className="general-text">
-                在UtilityMax，社会责任不仅仅是一项政策，更是我们企业文化和经营理念的核心。我们相信，作为一家金融服务机构，我们有责任利用自己的专业知识和资源，为构建更加公平、包容和可持续的社会做出贡献。
-              </p>
-              <p className="general-text">
-                我们的社会责任战略基于三大支柱：金融普惠、环境可持续性和社区投资。通过这些方向的努力，我们致力于创造长期的社会价值，同时也为公司的可持续发展奠定基础。
-              </p>
-              <p className="general-text">
-                我们鼓励员工积极参与社会责任活动，并将社会责任考量融入我们的业务决策和日常运营中。
-              </p>
-            </div>
-            <div className="relative">
-              <div className="img-container">
-                <img 
-                  src="https://images.unsplash.com/photo-1560252829-804f1aedf1be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" 
-                  alt="Our approach to social responsibility" 
-                  className="general-image"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Initiatives Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="h2-title">关键举措</h2>
+        <div className="container-custom max-w-3xl mx-auto">
+          <div className="text-left">
+            <h2 className="h2-title">我们的承诺</h2>
             <p className="general-text">
-              探索我们为创造积极社会影响而开展的主要举措
+              我们承诺依照相关法律法规及内部安全制度，妥善处理用户在使用UtilityMax 相关产品时的所有信息和数据，确保不将用户隐私用于与本产品服务无关的商业或其他用途，亦不会泄露给任何未获授权的第三方。
+            </p>
+            <p className="general-text mt-4">
+              我们承诺将严格遵守《中华人民共和国网络安全法》《个人信息保护法》等相关法律法规，持续完善公司治理结构，强化数据安全和合规管理，保障用户权益不受侵犯。
+            </p>
+            <p className="general-text mt-4">
+              与此同时，UtilityMax 始终坚信企业不仅是经济实体，更是社会责任的承担者。我们将积极履行企业社会责任，力求社会创造长期价值。
+            </p>
+            <p className="general-text mt-4 font-bold italic text-accent-blue">
+              相信UtilityMax！
             </p>
           </div>
-          
-          <div className="space-y-16">
-            {initiatives.map((initiative, index) => (
-              <div 
-                key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                }`}
-              >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <h3 className="card-title">{initiative.title}</h3>
-                  <p className="general-text">{initiative.description}</p>
-                  <button className="text-black font-medium hover:underline">
-                    了解更多 →
-                  </button>
-                </div>
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <div className="img-container">
-                    <img 
-                      src={initiative.image} 
-                      alt={initiative.title} 
-                      className="general-image"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
-
-      {/* Impact Stats Section */}
-      <section className="py-16">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="h2-title">我们的影响</h2>
-            <p className="general-text">
-              数字展示了我们在社会责任方面所取得的成就
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partnerships Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="h2-title">合作伙伴</h2>
-            <p className="general-text">
-              我们与各种组织合作，共同推进社会责任项目
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div
-                key={index}
-                className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-20"
-              >
-                <div className="text-center text-gray-400">合作伙伴 {index + 1}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sustainability Report Section */}
-      <section className="py-16">
-        <div className="container-custom">
-          <div className="bg-gray-100 p-8 rounded-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="h2-title">可持续发展报告</h2>
-                <p className="general-text">
-                  我们每年发布可持续发展报告，详细介绍我们在环境、社会和治理方面的表现和进展。
-                </p>
-                <button className="btn-primary">
-                  下载最新报告
-                </button>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {Array.from({ length: 4 }).map((_, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white p-4 rounded-lg shadow-sm text-center"
-                  >
-                    <div className="text-sm text-gray-600">2022 + {index}</div>
-                    <div className="text-lg font-medium mt-2">年度报告</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+      
     </div>
   );
 };
