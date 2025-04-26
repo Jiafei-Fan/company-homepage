@@ -79,6 +79,13 @@ const ResourcesPage = () => {
       date: '2025-04-18',
       link: 'https://mp.weixin.qq.com/s/bOSPu6rmKv7G2_WuKekEWg',
     },
+    {
+      id: 7,
+      title: '美国宏观经济学家如何评价“对等关税”可能导致的国内和国际影响？为什么众多学者都对政策表达担忧和失望？',
+      description: '整理经济学者对特朗普关税政策引发投资流失、金融动荡和经济衰退风险的担忧。',
+      date: '2025-04-26',
+      link: 'https://mp.weixin.qq.com/s/vljJnNHI1BUalDO6a4orww',
+    },
   ];
   
   const filteredResources = resources.filter(resource => {
